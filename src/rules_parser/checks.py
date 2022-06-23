@@ -6,7 +6,7 @@ import json
 def get_all_pods():
     try:
         config.load_kube_config()
-    except kubernetes.config.config_exception.ConfigException:
+    except config.config_exception.ConfigException:
         config.load_incluster_config()
 
     v1 = client.CoreV1Api()
